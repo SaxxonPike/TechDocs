@@ -1,0 +1,876 @@
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Yamaha OPL reference</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        tbody.gray-out th:empty, tbody.gray-out td:empty {
+            background: #EEE;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="panel panel-default">
+        <div class="table-responsive">
+
+            <table class="table table-bordered table-condensed">
+                <caption>
+                    Yamaha OPL2 reference
+                </caption>
+                <thead>
+                <tr>
+                    <th colspan="10">
+                        Terminology
+                    </th>
+                </tr>
+                <tr>
+                    <th>Term</th>
+                    <th colspan="9">Definition</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Operator</td>
+                    <td colspan="9">
+                        A single independently controllable oscillator.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Carrier</td>
+                    <td colspan="9">
+                        A signal that can be modulated by other signals.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Modulator</td>
+                    <td colspan="9">
+                        A signal that is used as a modulation source and generally not directly output.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Slot</td>
+                    <td colspan="9">
+                        A set of properties of an operator (e.g. envelope, amplification)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Channel</td>
+                    <td colspan="9">
+                        A mix bus that collects the processed signal of a carrier and its modulators.
+                    </td>
+                </tr>
+                </tbody>
+                <thead>
+                <tr>
+                    <th colspan="10">Capabilities of the OPL family</th>
+                </tr>
+                <tr>
+                    <th>Type</th>
+                    <th colspan="4">OPL2</th>
+                    <th colspan="4">OPL3</th>
+                    <th>Notes</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Slots</td>
+                    <td colspan="4">18</td>
+                    <td colspan="4">36</td>
+                    <td>Some slots are reserved while rhythm mode is enabled.</td>
+                </tr>
+                <tr>
+                    <td>Channels</td>
+                    <td colspan="4">9</td>
+                    <td colspan="4">18</td>
+                    <td>Some channels are reserved while rhythm mode is enabled.</td>
+                </tr>
+                <tr>
+                    <td>Waveforms</td>
+                    <td colspan="4">4</td>
+                    <td colspan="4">8</td>
+                    <td>OPL3 waveforms are backward compatible.</td>
+                </tr>
+                </tbody>
+                <thead>
+                <tr>
+                    <th colspan="10">
+                        2op Melodic Mode
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        Channel
+                    </th>
+                    <th colspan="4">
+                        Modulator Slot
+                    </th>
+                    <th colspan="4">
+                        Carrier Slot
+                    </th>
+                    <th>
+                        Notes
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        0
+                    </td>
+                    <td colspan="4">0</td>
+                    <td colspan="4">3</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        1
+                    </td>
+                    <td colspan="4">1</td>
+                    <td colspan="4">4</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        2
+                    </td>
+                    <td colspan="4">2</td>
+                    <td colspan="4">5</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        3
+                    </td>
+                    <td colspan="4">6</td>
+                    <td colspan="4">9</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        4
+                    </td>
+                    <td colspan="4">7</td>
+                    <td colspan="4">10</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        5
+                    </td>
+                    <td colspan="4">8</td>
+                    <td colspan="4">11</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        6
+                    </td>
+                    <td colspan="4">12</td>
+                    <td colspan="4">15</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        7
+                    </td>
+                    <td colspan="4">13</td>
+                    <td colspan="4">16</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        8
+                    </td>
+                    <td colspan="4">14</td>
+                    <td colspan="4">17</td>
+                    <td></td>
+                </tr>
+                </tbody>
+                <thead>
+                <tr>
+                    <th colspan="10">
+                        2op Rhythm Mode
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        Channel
+                    </th>
+                    <th colspan="4">
+                        Modulator Slot
+                    </th>
+                    <th colspan="4">
+                        Carrier Slot
+                    </th>
+                    <th>
+                        Notes
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        0
+                    </td>
+                    <td colspan="4">0</td>
+                    <td colspan="4">3</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        1
+                    </td>
+                    <td colspan="4">1</td>
+                    <td colspan="4">4</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        2
+                    </td>
+                    <td colspan="4">2</td>
+                    <td colspan="4">5</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        3
+                    </td>
+                    <td colspan="4">6</td>
+                    <td colspan="4">9</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        4
+                    </td>
+                    <td colspan="4">7</td>
+                    <td colspan="4">10</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        5
+                    </td>
+                    <td colspan="4">8</td>
+                    <td colspan="4">11</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        BD
+                    </td>
+                    <td colspan="4">12</td>
+                    <td colspan="4">15</td>
+                    <td>Pitch affected by channel 6.<br/>
+                        Only slot 12 controls volume.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        SD
+                    </td>
+                    <td colspan="4">16</td>
+                    <td colspan="4"></td>
+                    <td>Pitch affected by channel 7.</td>
+                </tr>
+                <tr>
+                    <td>
+                        TOM
+                    </td>
+                    <td colspan="4">14</td>
+                    <td colspan="4"></td>
+                    <td>Pitch affected by channel 8.</td>
+                </tr>
+                <tr>
+                    <td>
+                        TC
+                    </td>
+                    <td colspan="4">17</td>
+                    <td colspan="4"></td>
+                    <td>Pitch affected by channels 7 and 8.</td>
+                </tr>
+                <tr>
+                    <td>
+                        HH
+                    </td>
+                    <td colspan="4">13</td>
+                    <td colspan="4"></td>
+                    <td>Pitch affected by channels 7 and 8.</td>
+                </tr>
+                </tbody>
+                <thead>
+                <tr>
+                    <th colspan="10">
+                        Slot Register Map
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        Slot
+                    </th>
+                    <th colspan="8">
+                        Offset
+                    </th>
+                    <th>
+                        Notes
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>0 - 5</td>
+                    <td colspan="8">0x00 - 0x05</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>6 - 11</td>
+                    <td colspan="8">0x08 - 0x0D</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>12 - 17</td>
+                    <td colspan="8">0x10 - 0x15</td>
+                    <td>Used by drums in rhythm mode.</td>
+                </tr>
+                </tbody>
+                <thead>
+                <tr>
+                    <th colspan="10">
+                        Register Map (read-only: status on 0x388)
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        Register
+                    </th>
+                    <th>
+                        0x80 D7
+                    </th>
+                    <th>
+                        0x40 D6
+                    </th>
+                    <th>
+                        0x20 D5
+                    </th>
+                    <th>
+                        0x10 D4
+                    </th>
+                    <th>
+                        0x08 D3
+                    </th>
+                    <th>
+                        0x04 D2
+                    </th>
+                    <th>
+                        0x02 D1
+                    </th>
+                    <th>
+                        0x01 D0
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                </tr>
+                </thead>
+                <tbody class="gray-out">
+                <tr>
+                    <td></td>
+                    <td>IRQ</td>
+                    <td>FT1</td>
+                    <td>FT2</td>
+                    <td colspan="5"></td>
+                    <td>
+                        <i>This register can be reset by writing 1 to RST.</i><br/>
+                        <b>IRQ: IRQ flag.</b>
+                        <ul>
+                            <li>0: Neither FT1 or FT2 are set.</li>
+                            <li>1: Either FT1 or FT2 are set.</li>
+                        </ul>
+                        <b>FT1: Timer 1 flag.</b>
+                        <ul>
+                            <li>0: TIMER1 has not overflowed.</li>
+                            <li>1: TIMER1 overflowed.</li>
+                        </ul>
+                        <b>FT2: Timer 2 flag.</b>
+                        <ul>
+                            <li>0: TIMER2 has not overflowed.</li>
+                            <li>1: TIMER2 overflowed.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+                <thead>
+                <tr>
+                    <th colspan="10">
+                        Register Map (write-only: register to 0x388, then data to 0x389)
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        Register
+                    </th>
+                    <th>
+                        0x80 D7
+                    </th>
+                    <th>
+                        0x40 D6
+                    </th>
+                    <th>
+                        0x20 D5
+                    </th>
+                    <th>
+                        0x10 D4
+                    </th>
+                    <th>
+                        0x08 D3
+                    </th>
+                    <th>
+                        0x04 D2
+                    </th>
+                    <th>
+                        0x02 D1
+                    </th>
+                    <th>
+                        0x01 D0
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                </tr>
+                </thead>
+                <tbody class="gray-out">
+                <tr> <!-- 0x001 -->
+                    <td>
+                        0x001
+                    </td>
+                    <td colspan="2">
+                        TEST
+                    </td>
+                    <td colspan="1">
+                        WSE
+                    </td>
+                    <td colspan="5">
+                        TEST
+                    </td>
+                    <td>
+                        <b>TEST: LSI test data</b>
+                        <ul>
+                            <li>Always 0.</li>
+                        </ul>
+                        <b>WSE: Wave Select Enable (bit 5)</b>
+                        <ul>
+                            <li>Only available on OPL2.</li>
+                            <li>0: use only waveform 0</li>
+                            <li>1: enable waveforms 0-3</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr> <!-- 0x002 -->
+                    <td>
+                        0x002
+                    </td>
+                    <td colspan="8">
+                        TIMER1
+                    </td>
+                    <td>
+                        <b>TIMER1: Timer 1 Count</b>
+                        <ul>
+                            <li>80 µs resolution</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr> <!-- 0x003 -->
+                    <td>
+                        0x003
+                    </td>
+                    <td colspan="8">
+                        TIMER2
+                    </td>
+                    <td>
+                        <b>TIMER2: Timer 2 Count</b>
+                        <ul>
+                            <li>320 µs resolution</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr> <!-- 0x004 -->
+                    <td>
+                        0x004
+                    </td>
+                    <td>
+                        RST
+                    </td>
+                    <td>
+                        MT1
+                    </td>
+                    <td>
+                        MT2
+                    </td>
+                    <td colspan="3"></td>
+                    <td>
+                        ST2
+                    </td>
+                    <td>
+                        ST1
+                    </td>
+                    <td>
+                        <b>RST: IRQ reset (bit 7)</b>
+                        <ul>
+                            <li>
+                                1: Reset timer and IRQ flags in the status register.
+                                All other bits are ignored when this bit is set.
+                            </li>
+                        </ul>
+                        <b>MT1: Timer 1 Mask (bit 6)</b>
+                        <ul>
+                            <li>0: Timer 1 will not raise IRQ on overflow.</li>
+                            <li>1: Timer 1 will raise IRQ on overflow.</li>
+                        </ul>
+                        <b>MT2: Timer 2 Mask (bit 5)</b>
+                        <ul>
+                            <li>0: Timer 2 will not raise IRQ on overflow.</li>
+                            <li>1: Timer 2 will raise IRQ on overflow.</li>
+                        </ul>
+                        <b>ST2: Timer 2 Enable (bit 1)</b>
+                        <ul>
+                            <li>0: Timer 2 is stopped.</li>
+                            <li>1: Timer 2 is running.</li>
+                        </ul>
+                        <b>ST1: Timer 1 Enable (bit 0)</b>
+                        <ul>
+                            <li>0: Timer 1 is stopped.</li>
+                            <li>1: Timer 1 is running.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr> <!-- 0x008 -->
+                    <td>
+                        0x008
+                    </td>
+                    <td>
+                        CSM
+                    </td>
+                    <td>
+                        NTS
+                    </td>
+                    <td colspan="6"></td>
+                    <td>
+                        <b>CSM: Speech synthesis mode (bit 7)</b>
+                        <ul>
+                            <li>OPL2 only.</li>
+                            <li>0: CSM is disabled</li>
+                            <li>1: CSM is enabled</li>
+                            <li>Not much is known about this mode.</li>
+                        </ul>
+                        <b>NTS: Note select (bit 6)</b>
+                        <ul>
+                            <li>0: Operators are active at all frequencies.</li>
+                            <li>1: Operators are active based on bit 7 of FB.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr> <!-- 0x020 -->
+                    <td>
+                        0x020<br/>
+                        + slot register
+                    </td>
+                    <td>AM</td>
+                    <td>VIB</td>
+                    <td>EGT</td>
+                    <td>KSR</td>
+                    <td colspan="4">MULTI</td>
+                    <td>
+                        <i>This is a slot register.</i><br/>
+                        <b>AM: Tremolo (bit 7)</b>
+                        <ul>
+                            <li>0: Tremolo is disabled.</li>
+                            <li>1: Tremolo is enabled, affected by DAM.</li>
+                        </ul>
+                        <b>VIB: Vibrato (bit 6)</b>
+                        <ul>
+                            <li>0: Vibrato is disabled.</li>
+                            <li>1: Vibrato is enabled, affected by DVB.</li>
+                        </ul>
+                        <b>EGT: Sustain type (bit 5)</b>
+                        <ul>
+                            <li>0: Release envelope is triggered immediately after the decay envelope.</li>
+                            <li>1: Release envelope is triggered at note-off.</li>
+                        </ul>
+                        <b>KSR: Keyboard scaling rate (bit 4)</b>
+                        <ul>
+                            <li>0: Envelope is unaffected by frequency.</li>
+                            <li>1: Envelope is shortened relative to frequency.</li>
+                        </ul>
+                        <b>MULTI: Frequency multiplier (bits 3..0)</b>
+                        <ul>
+                            <li>0: Multiply the operator frequency by 0.5</li>
+                            <li>1: Frequency is unaffected</li>
+                            <li>All others: Multiply the operator frequency by the specified value</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr> <!-- 0x040 -->
+                    <td>
+                        0x040<br/>
+                        + slot register
+                    </td>
+                    <td colspan="2">
+                        KSL
+                    </td>
+                    <td colspan="6">
+                        TL
+                    </td>
+                    <td>
+                        <i>This is a slot register.</i><br/>
+                        <b>KSL: Key scale level (bits 7..6)</b>
+                        <ul>
+                            <li>0: No attenuation based on pitch.</li>
+                            <li>1: Attenuate the operator by 3dB/octave.</li>
+                            <li>2: Attenuate the operator by 1.5dB/octave.</li>
+                            <li>3: Attenuate the operator by 6dB/octave.</li>
+                        </ul>
+                        <b>TL: Total level (bits 5..0)</b>
+                        <ul>
+                            <li>Attenuates the operator by TL * 0.75dB</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr> <!-- 0x060 -->
+                    <td>
+                        0x060<br/>
+                        + slot register
+                    </td>
+                    <td colspan="4">
+                        AR
+                    </td>
+                    <td colspan="4">
+                        DR
+                    </td>
+                    <td>
+                        <i>This is a slot register.</i><br/>
+                        <b>AR: Attack rate (bits 7..4)</b>
+                        <ul>
+                            <li>Rate at which an operator fades on at note-on.</li>
+                            <li>Higher values indicate shorter time.</li>
+                        </ul>
+                        <b>DR: Decay rate (bits 3..0)</b>
+                        <ul>
+                            <li>Rate at which an operator will fall to the sustain value after attack.</li>
+                            <li>Higher values indicate shorter time.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr> <!-- 0x080 -->
+                    <td>
+                        0x080<br/>
+                        + slot register
+                    </td>
+                    <td colspan="4">
+                        SL
+                    </td>
+                    <td colspan="4">
+                        RR
+                    </td>
+                    <td>
+                        <i>This is a slot register.</i><br/>
+                        <b>SL: Sustain level (bits 7..4)</b>
+                        <ul>
+                            <li>Level at which a note will be held until note-off.</li>
+                            <li>Attenuation is SL * 3dB</li>
+                        </ul>
+                        <b>RR: Release rate (bits 3..0)</b>
+                        <ul>
+                            <li>Rate at which an operator will fade out after note-off.</li>
+                            <li>Higher values indicate shorter time.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr> <!-- 0x0A0 -->
+                    <td>
+                        0x0A0<br/>
+                        + channel register
+                    </td>
+                    <td colspan="8">
+                        FNUM(L)
+                    </td>
+                    <td>
+                        <i>This is a channel register.</i><br/>
+                        <b>FNUM(L): Frequency number</b>
+                        <ul>
+                            <li>Determines the base pitch of a channel.</li>
+                            <li>From Hz: x * 2^(20 - BLOCK) / 49716</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr> <!-- 0x0B0 -->
+                    <td>
+                        0x0B0<br/>
+                        + channel register
+                    </td>
+                    <td colspan="2"></td>
+                    <td>KON</td>
+                    <td colspan="3">BLOCK</td>
+                    <td colspan="2">FNUM(H)</td>
+                    <td>
+                        <i>This is a channel register.</i><br/>
+                        <b>KON: Key on (bit 5)</b>
+                        <ul>
+                            <li>0: The channel is in note-off state.</li>
+                            <li>1: The channel is in note-on state.</li>
+                            <li>The attack envelope starts when transitioning from off to on.</li>
+                            <li>The release envelope starts when transitioning from on to off.</li>
+                            <li>This acts on all operators associated with a channel.</li>
+                        </ul>
+                        <b>BLOCK: Block number (bits 4..2)</b>
+                        <ul>
+                            <li>Acts as a power-of-two multiplier for FNUM.</li>
+                            <li>See FNUM(L) above for more details.</li>
+                        </ul>
+                        <b>FNUM(H): Frequency number (bits 1..0)</b>
+                        <ul>
+                            <li>Contains the upper 2 bits of FNUM to form a 10-bit value.</li>
+                            <li>See FNUM(L) above for more details.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr> <!-- 0x0BD -->
+                    <td>
+                        0x0BD
+                    </td>
+                    <td>DAM</td>
+                    <td>DVB</td>
+                    <td>RYT</td>
+                    <td>BD</td>
+                    <td>SD</td>
+                    <td>TOM</td>
+                    <td>TC</td>
+                    <td>HH</td>
+                    <td>
+                        <b>DAM: Tremolo depth (bit 7)</b>
+                        <ul>
+                            <li>
+                                0: Tremolo depth is 1dB.
+                                1: Tremolo depth is 4.8dB.
+                            </li>
+                        </ul>
+                        <b>DVB: Vibrato depth (bit 6)</b>
+                        <ul>
+                            <li>
+                                0: Vibrato depth is 7% of base frequency.
+                            </li>
+                            <li>
+                                1: Vibrato depth is 14% of base frequency.
+                            </li>
+                        </ul>
+                        <b>RYT: Rhythm mode enable (bit 5)</b>
+                        <ul>
+                            <li>
+                                0: Rhythm mode is disabled; channels 6-8 are standard channels.
+                            </li>
+                            <li>
+                                1: Rhythm mode is enabled; channels 6-8 are used by drums.
+                            </li>
+                        </ul>
+                        <b>BD: Bass drum note-on (bit 4)</b>
+                        <ul>
+                            <li>0: Bass drum is in note-off state.</li>
+                            <li>1: Bass drum is in note-on state.</li>
+                        </ul>
+                        <b>SD: Snare drum note-on (bit 3)</b>
+                        <ul>
+                            <li>0: Snare drum is in note-off state.</li>
+                            <li>1: Snare drum is in note-on state.</li>
+                        </ul>
+                        <b>TOM: Tom tom note-on (bit 2)</b>
+                        <ul>
+                            <li>0: Tom tom is in note-off state.</li>
+                            <li>1: Tom tom is in note-on state.</li>
+                        </ul>
+                        <b>TC: Top cymbal note-on (bit 1)</b>
+                        <ul>
+                            <li>0: Top cymbal is in note-off state.</li>
+                            <li>1: Top cymbal is in note-on state.</li>
+                        </ul>
+                        <b>HH: Hi-hat note-on (bit 0)</b>
+                        <ul>
+                            <li>0: Hi-hat is in note-off state.</li>
+                            <li>1: Hi-hat is in note-on state.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr> <!-- 0x0C0 -->
+                    <td>
+                        0x0C0<br/>
+                        + channel register
+                    </td>
+                    <td colspan="4"></td>
+                    <td colspan="3">FB</td>
+                    <td>CNT</td>
+                    <td>
+                        <i>This is a channel register.</i><br/>
+                        <b>FB: Feedback amount (bits 3..1)</b>
+                        <ul>
+                            <li>
+                                0: No operator feedback.
+                            </li>
+                            <li>
+                                1: Feedback factor is &pi;/16
+                            </li>
+                            <li>
+                                2: Feedback factor is &pi;/8
+                            </li>
+                            <li>
+                                3: Feedback factor is &pi;/4
+                            </li>
+                            <li>
+                                4: Feedback factor is &pi;/2
+                            </li>
+                            <li>
+                                5: Feedback factor is &pi;
+                            </li>
+                            <li>
+                                6: Feedback factor is 2&pi;
+                            </li>
+                            <li>
+                                7: Feedback factor is 4&pi;
+                            </li>
+                        </ul>
+                        <b>CNT: Operator connection (bit 0)</b>
+                        <ul>
+                            <li>
+                                0: Operator 1 modulates Operator 2
+                            </li>
+                            <li>
+                                1: Operator 1 sums Operator 2
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr> <!-- 0x0E0 -->
+                    <td>
+                        0x0E0<br/>
+                        + slot register
+                    </td>
+                    <td colspan="6"></td>
+                    <td colspan="2">WS</td>
+                    <td>
+                        <i>This is a slot register.</i><br/>
+                        <b>WS: Waveform select (bits 1..0)</b>
+                        <ul>
+                            <li>0: Sine.</li>
+                            <li>1: Half sine.</li>
+                            <li>2: Abs-sine.</li>
+                            <li>3: Quarter sine.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
